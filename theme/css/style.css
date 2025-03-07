@@ -1,0 +1,257 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    background-color: #F0F8F5;
+    color: #333;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background-color: #4682B4;
+    position: relative;
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #4682B4;
+}
+
+.logo-wrapper {
+    background-color: #4682B4;
+    padding: 5px;
+    forced-color-adjust: none;
+    -webkit-forced-color-adjust: none;
+}
+
+.logo-image {
+    max-width: 150px;
+    height: auto;
+    filter: none;
+    -webkit-filter: none;
+    forced-color-adjust: none;
+    -webkit-forced-color-adjust: none;
+}
+
+.firm-info {
+    text-align: left;
+    color: #F0F8F5;
+}
+
+.firm-info h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.firm-info p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.firm-name {
+    color: #F0F8F5;
+    text-decoration: none;
+}
+
+.firm-name:hover {
+    text-decoration: underline;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #F0F8F5;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 5px 10px;
+    display: block;
+    position: relative;
+    z-index: 3;
+}
+
+/* Hover effect */
+nav a:hover {
+    color: #4682B4; /* Reversed text color */
+    background-color: #B0E0E6; /* Text area background */
+    border-radius: 0 0 5px 5px; /* Round only bottom corners */
+}
+
+nav a:hover::before {
+    content: '';
+    position: absolute;
+    top: -100vh; /* Extend to top of screen */
+    left: 0;
+    right: 0;
+    bottom: 100%; /* Stop at top of text area */
+    background-color: #B0E0E6; /* Seamless extension */
+    z-index: 1; /* Below text */
+}
+
+/* Active button */
+nav a.active {
+    color: #4682B4; /* Reversed text color */
+    background-color: #ADD8E6; /* Text area background */
+    text-decoration: none;
+    border-radius: 0 0 5px 5px; /* Round only bottom corners */
+}
+
+nav a.active::before {
+    content: '';
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    right: 0;
+    bottom: 100%; /* Stop at top of text area */
+    background-color: #ADD8E6; /* Seamless extension */
+    z-index: 1; /* Below text */
+}
+
+/* Hover on active button */
+nav a.active:hover {
+    background-color: #B0E0E6;
+}
+
+nav a.active:hover::before {
+    background-color: #B0E0E6;
+}
+
+/* Suppress active state when hovering a different button */
+nav:hover a.active:not(:hover) {
+    color: #F0F8F5; /* Revert text */
+    background-color: transparent; /* Remove text area background */
+}
+
+nav:hover a.active:not(:hover)::before {
+    display: none; /* Hide extension */
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #F0F8F5;
+    color: #4682B4;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #4682B4;
+    color: #F0F8F5;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.cta-button:hover {
+    background-color: #ADD8E6;
+    color: #333;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #4682B4;
+    color: #F0F8F5;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.audit-info {
+    padding: 30px 20px;
+    background-color: #F0F8F5;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.audit-info h2 {
+    font-size: 28px;
+    color: #4682B4;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.audit-info p {
+    font-size: 18px;
+    color: #333;
+    margin: 15px 0;
+}
+
+.services-pitch {
+    padding: 30px 20px;
+    background-color: #FFFFFF;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-pitch h2 {
+    font-size: 28px;
+    color: #4682B4;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.services-pitch p {
+    font-size: 18px;
+    color: #333;
+    margin: 15px 0;
+}
+
+.services-pitch ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.services-pitch li {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.services-pitch li:before {
+    content: "✔";
+    color: #4682B4;
+    position: absolute;
+    left: 0;
+}
+
+.services-pitch .cta-button {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+}
