@@ -86,7 +86,7 @@ nav a {
     display: block;
     position: relative;
     z-index: 3;
-    white-space: nowrap; /* Prevent text wrapping */
+    white-space: nowrap;
 }
 
 /* Hover effect */
@@ -282,6 +282,10 @@ footer {
         font-size: 12px;
     }
 
+    nav {
+        width: 100%; /* Ensure nav takes full width */
+    }
+
     nav ul {
         flex-direction: column;
         gap: 5px;
@@ -294,14 +298,13 @@ footer {
         padding: 8px;
         width: 100%;
         box-sizing: border-box;
+        text-align: center;
     }
 
-    /* Limit ::before to button area on small screens */
+    /* Disable ::before on small screens */
     nav a:hover::before,
     nav a.active::before {
-        top: 0; /* Remove full-screen extension */
-        bottom: 0;
-        height: 100%; /* Match button height */
+        display: none;
     }
 
     .hero {
