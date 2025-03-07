@@ -285,14 +285,23 @@ footer {
     nav ul {
         flex-direction: column;
         gap: 5px;
-        padding: 10px 0;
+        padding: 0;
+        width: 100%;
     }
 
     nav a {
         font-size: 16px;
-        padding: 5px 10px;
+        padding: 8px;
         width: 100%;
         box-sizing: border-box;
+    }
+
+    /* Limit ::before to button area on small screens */
+    nav a:hover::before,
+    nav a.active::before {
+        top: 0; /* Remove full-screen extension */
+        bottom: 0;
+        height: 100%; /* Match button height */
     }
 
     .hero {
@@ -337,7 +346,7 @@ footer {
 
     nav a {
         font-size: 14px;
-        padding: 4px 8px;
+        padding: 6px;
     }
 
     .hero h1 {
