@@ -86,6 +86,7 @@ nav a {
     display: block;
     position: relative;
     z-index: 3;
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 /* Hover effect */
@@ -259,71 +260,71 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Stack logo and nav vertically */
-        padding: 10px 15px; /* Reduce padding */
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
     }
 
     .logo-container {
-        flex-direction: column; /* Stack logo and firm info */
-        text-align: center;
-        gap: 10px;
+        flex-direction: column;
+        gap: 5px;
     }
 
     .logo-image {
-        max-width: 120px; /* Smaller logo on tablets */
+        max-width: 120px;
     }
 
     .firm-info h1 {
-        font-size: 20px; /* Smaller title */
+        font-size: 20px;
     }
 
     .firm-info p {
-        font-size: 12px; /* Smaller subtitle */
+        font-size: 12px;
     }
 
     nav ul {
-        flex-direction: column; /* Stack nav items */
-        gap: 10px;
-        width: 100%;
-        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px 0;
     }
 
     nav a {
-        font-size: 18px; /* Slightly smaller text */
-        padding: 8px 15px; /* Adjust padding */
-        width: 100%; /* Full width buttons */
+        font-size: 16px;
+        padding: 5px 10px;
+        width: 100%;
         box-sizing: border-box;
     }
 
     .hero {
-        padding: 20px 10px; /* Reduce padding */
+        padding: 20px 10px;
     }
 
     .hero h1 {
-        font-size: 28px; /* Smaller heading */
+        font-size: 24px;
     }
 
     .hero p {
-        font-size: 16px; /* Smaller text */
+        font-size: 16px;
     }
 
     .audit-info, .services-pitch {
-        padding: 20px 10px; /* Reduce padding */
+        padding: 15px;
+        max-width: 100%;
     }
 
     .audit-info h2, .services-pitch h2 {
-        font-size: 24px; /* Smaller headings */
+        font-size: 20px;
     }
 
     .cta-button {
-        padding: 10px 20px; /* Smaller button */
-        font-size: 16px;
+        padding: 8px 15px;
+        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
     .logo-image {
-        max-width: 100px; /* Even smaller logo on phones */
+        max-width: 100px;
     }
 
     .firm-info h1 {
@@ -335,12 +336,12 @@ footer {
     }
 
     nav a {
-        font-size: 16px; /* Smaller nav text */
-        padding: 6px 10px;
+        font-size: 14px;
+        padding: 4px 8px;
     }
 
     .hero h1 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .hero p {
@@ -348,14 +349,19 @@ footer {
     }
 
     .audit-info h2, .services-pitch h2 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .audit-info p, .services-pitch p, .services-pitch li {
-        font-size: 14px; /* Smaller body text */
+        font-size: 13px;
     }
 
     footer {
-        padding: 15px; /* Reduce footer padding */
+        padding: 10px;
+    }
+
+    .cta-button {
+        padding: 6px 12px;
+        font-size: 12px;
     }
 }
