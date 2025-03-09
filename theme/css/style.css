@@ -225,7 +225,7 @@ footer {
 }
 
 .services-pitch p {
-    font-size: 18px;
+    font-size: "18px;
     color: #333;
     margin: 15px 0;
 }
@@ -257,7 +257,7 @@ footer {
     margin: 20px auto 0;
 }
 
-/* Responsive Design */
+/* Responsive Design for Portrait Mode */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -283,7 +283,7 @@ footer {
     }
 
     nav {
-        width: 100%; /* Ensure nav takes full width */
+        width: 100%;
     }
 
     nav ul {
@@ -375,5 +375,76 @@ footer {
     .cta-button {
         padding: 6px 12px;
         font-size: 12px;
+    }
+}
+
+/* New Media Query for Landscape Mode on Mid-Sized Screens */
+@media (max-height: 500px) and (orientation: landscape) {
+    header {
+        flex-direction: row; /* Keep logo and nav side by side */
+        align-items: center;
+        padding: 5px 10px; /* Reduce padding for shorter height */
+    }
+
+    .logo-container {
+        flex-direction: row; /* Logo and firm info side by side */
+        gap: 10px;
+    }
+
+    .logo-image {
+        max-width: 80px; /* Smaller logo to fit */
+    }
+
+    .firm-info h1 {
+        font-size: 16px;
+    }
+
+    .firm-info p {
+        font-size: 10px;
+    }
+
+    nav {
+        width: auto; /* Allow nav to take only the space it needs */
+    }
+
+    nav ul {
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+        white-space: nowrap; /* Keep buttons in a single row */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+        gap: 10px; /* Smaller gap */
+        padding-bottom: 5px; /* Space for scrollbar */
+    }
+
+    nav a {
+        font-size: 14px; /* Smaller text */
+        padding: 4px 8px; /* Smaller padding */
+        display: inline-block; /* Fit content */
+    }
+
+    /* Disable ::before to avoid background issues */
+    nav a:hover::before,
+    nav a.active::before {
+        display: none;
+    }
+
+    .hero {
+        padding: 10px;
+    }
+
+    .hero h1 {
+        font-size: 20px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .audit-info, .services-pitch {
+        padding: 10px;
+    }
+
+    .audit-info h2, .services-pitch h2 {
+        font-size: 18px;
     }
 }
