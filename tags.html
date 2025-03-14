@@ -1,19 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+   
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="ООО аудиторская фирма тесс, тесс аудит, аудит, налоговое консультирование, ведение бухгалтерии, бухгалтерские услуги, юридические услуги">
-    <meta name="description" content="Профессиональные аудиторские, бухгалтерские и юридические услуги от ООО Тесс.">
+    <meta name="keywords" content="ООО аудиторская фирма Тесс, Тесс аудит, аудит, налоговое консультирование, ведение бухгалтерии, бухгалтерские услуги, юридические услуги">
+    <meta name="description" content="Профессиональные аудиторские, бухгалтерские и юридические услуги от ООО Тесс. Высококачественный аудит и сопровождение бизнеса в России.">
     <title>ООО Аудиторская фирма ТЕСС - Аудит, налоговое консультирование, бухгалтерские, юридические услуги</title>
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="./theme/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
+
+    <!-- Fallback for Older Browsers -->
+    <noscript>
+        <link rel="stylesheet" href="./theme/css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    </noscript>
+
+    <!-- Structured Data for LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "ООО Аудиторская фирма Тесс",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "117556, Москва, Варшавское шоссе, дом 70, корп. 3, кв. 43",
+            "addressLocality": "Москва",
+            "addressCountry": "RU"
+        },
+        "telephone": "+7-495-952-13-44",
+        "url": "https://www.tess-audit.ru",
+        "sameAs": [
+                    "https://www.vk.com/tessaudit"
+        ]
+    }
+    </script>
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="ООО Аудиторская фирма ТЕСС - Аудит, налоговое консультирование, бухгалтерские, юридические услуги">
+    <meta property="og:description" content="Профессиональные аудиторские, бухгалтерские и юридические услуги от ООО Тесс.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="./">
+    <meta property="og:image" content="./images/tess.png">
+
     <link rel="stylesheet" href="./theme/css/style.css">
 </head>
 <body>
     <header>
         <div class="logo-container">
             <div class="logo-wrapper">
-                <a href="./">
-                    <img src="./images/tess.png" alt="Тесс Аудит" class="logo-image">
+                <a href="./" aria-label="Перейти на главную страницу">
+                    <picture>
+                        <source srcset="./images/tess.webp" type="image/webp">
+                        <img src="./images/tess.png" alt="Логотип ООО Аудиторская фирма Тесс" class="logo-image" width="150" height="150" loading="lazy">
+                    </picture>
                 </a>
             </div>
             <div class="firm-info">
@@ -21,7 +64,7 @@
                 <p>член СРО аудиторов АСС ОРНЗ № 12006017864</p>
             </div>
         </div>
-        <nav aria-label="Основная навигация">
+        <nav aria-label="Основная навигация" role="navigation">
             <ul>
                 <li><a href="./" >Главная</a></li>
                 <li><a href="./pages/services.html" >Наши услуги</a></li>
@@ -30,15 +73,26 @@
             </ul>
         </nav>
     </header>
-
     <main>
 <ul>
 </ul>
     </main>
-
     <footer>
         <p>ООО Аудиторская фирма Тесс © 2025</p>
-        <a href="./pages/contacts.html" class="cta-button">Связаться с нами</a>
+        <a href="./pages/contacts.html" class="cta-button" aria-label="Связаться с нами">Связаться с нами</a>
     </footer>
+
+    <!-- Google Analytics (Replace UA-XXXXX-X with your tracking ID) 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXX-X');
+    </script>
+-->
+    <!-- Preserve Existing Cloudflare Script
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'91f40a20dc7ac009',t:'MTc0MTc5MDM1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+ -->
 </body>
 </html>

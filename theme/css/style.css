@@ -94,6 +94,8 @@ nav a:hover {
     color: #4682B4;
     background-color: #B0E0E6;
     border-radius: 0 0 5px 5px;
+    transform: scale(1.05);
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 nav a:hover::before {
@@ -105,6 +107,12 @@ nav a:hover::before {
     bottom: 100%;
     background-color: #B0E0E6;
     z-index: 1;
+}
+
+/* Focus state for accessibility */
+nav a:focus {
+    outline: 2px solid #F0F8F5;
+    outline-offset: 2px;
 }
 
 /* Active button */
@@ -167,6 +175,12 @@ footer {
     font-weight: 700;
 }
 
+/* Add focus state for CTA button */
+.cta-button:focus {
+    outline: 2px solid #4682B4;
+    outline-offset: 2px;
+}
+
 .cta-button:hover {
     background-color: #ADD8E6;
     color: #333;
@@ -224,8 +238,9 @@ footer {
     margin-bottom: 20px;
 }
 
+/* Fix syntax error: missing closing quote */
 .services-pitch p {
-    font-size: "18px;
+    font-size: 18px;
     color: #333;
     margin: 15px 0;
 }
@@ -255,6 +270,131 @@ footer {
     display: block;
     width: fit-content;
     margin: 20px auto 0;
+}
+
+/* Testimonials section (added for social proof) */
+.testimonials {
+    padding: 30px 20px;
+    background-color: #F0F8F5;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 28px;
+    color: #4682B4;
+    margin-bottom: 20px;
+}
+
+.testimonials blockquote {
+    font-style: italic;
+    color: #333;
+    margin: 0;
+}
+
+/* Report Page Specific Styles */
+.reports-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reports-page h1 {
+    color: #4682B4;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.reports-page h2 {
+    color: #4682B4;
+    border-bottom: 2px solid #4682B4;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+.reports-page h3 {
+    color: #333;
+    margin-top: 20px;
+}
+
+.reports-page ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.reports-page ul li {
+    margin: 10px 0;
+    padding-left: 10px;
+    position: relative;
+}
+
+.reports-page ul li::before {
+    content: "•";
+    color: #4682B4;
+    position: absolute;
+    left: -10px;
+}
+
+.reports-page a {
+    color: #4682B4;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.reports-page a:hover {
+    color: #ADD8E6;
+    text-decoration: underline;
+}
+
+.reports-page blockquote {
+    font-style: italic;
+    color: #555;
+    border-left: 4px solid #4682B4;
+    padding-left: 15px;
+    margin: 15px 0;
+}
+
+/* Sticky Table of Contents (Desktop Only) */
+@media (min-width: 769px) {
+    .toc {
+        position: sticky;
+        top: 20px;
+        float: right;
+        width: 25%;
+        background-color: #F0F8F5;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .content {
+        float: left;
+        width: 70%;
+    }
+
+    .reports-page::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .reports-page {
+        padding: 15px;
+    }
+
+    .toc {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        width: 100%;
+    }
 }
 
 /* Responsive Design for Portrait Mode */
@@ -300,7 +440,7 @@ footer {
         box-sizing: border-box;
         text-align: center;
     }
-
+   
     /* Disable ::before on small screens */
     nav a:hover::before,
     nav a.active::before {
@@ -319,18 +459,31 @@ footer {
         font-size: 16px;
     }
 
-    .audit-info, .services-pitch {
+    .audit-info, .services-pitch, .testimonials {
         padding: 15px;
         max-width: 100%;
     }
 
-    .audit-info h2, .services-pitch h2 {
+    .audit-info h2, .services-pitch h2, .testimonials h2 {
         font-size: 20px;
     }
 
     .cta-button {
         padding: 8px 15px;
         font-size: 14px;
+    }
+
+    .reports-page {
+        padding: 15px;
+    }
+
+    .toc {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        width: 100%;
     }
 }
 
@@ -360,11 +513,11 @@ footer {
         font-size: 14px;
     }
 
-    .audit-info h2, .services-pitch h2 {
+    .audit-info h2, .services-pitch h2, .testimonials h2 {
         font-size: 18px;
     }
 
-    .audit-info p, .services-pitch p, .services-pitch li {
+    .audit-info p, .services-pitch p, .services-pitch li, .testimonials blockquote {
         font-size: 13px;
     }
 
@@ -375,6 +528,29 @@ footer {
     .cta-button {
         padding: 6px 12px;
         font-size: 12px;
+    }
+
+    .reports-page h2 {
+        font-size: 20px;
+    }
+
+    .reports-page h3 {
+        font-size: 16px;
+    }
+
+    .reports-page ul li {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    nav a {
+        font-size: 12px;
+        padding: 8px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -440,11 +616,23 @@ footer {
         font-size: 14px;
     }
 
-    .audit-info, .services-pitch {
+    .audit-info, .services-pitch, .testimonials {
         padding: 10px;
     }
 
-    .audit-info h2, .services-pitch h2 {
+    .audit-info h2, .services-pitch h2, .testimonials h2 {
         font-size: 18px;
+    }
+
+    .reports-page {
+        padding: 10px;
+    }
+
+    .reports-page h2 {
+        font-size: 18px;
+    }
+
+    .reports-page h3 {
+        font-size: 16px;
     }
 }
